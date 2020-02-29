@@ -1,37 +1,43 @@
-## Welcome to GitHub Pages
+## Computer Vision Alogirthms and their implementation in Python2
 
-You can use the [editor on GitHub](https://github.com/overrkill/PyVision/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+view the code (https://github.com/overrkill/PyVision)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### DDA
 
 ```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+dy=y2-y
+dx=x2-x
+step=0.0
+if abs(dx)>abs(dy):
+    step=dx
+else:
+    step=dy
+print(step)
+xin=float(dx)/step
+yin=float(dy)/step
+print("inc x y ",xin,yin)
+for i in range(step):
+    x=x+xin
+    y=y+yin
+    print(x,y)
+   
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/overrkill/PyVision/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### Bresenhams
+```markdown
+dx=x2-x
+dy=y2-y
+dt=2*dy-2*dx
+ds=2*dy
+d=ds-dx
+print("line ({},{}) and ({},{})\n dx {}\n dy {} \n dt {} \n ds {} \n d {}".format(x,y,x2,y2,dx,dy,dt,ds,d))
+while(x<x2):
+    x=x+1
+    if d<0:
+        d=d+ds
+    else:
+        y=y+1
+        d=d+dt
+    print("d:{} pt:({},{})".format(d,x,y))
+    
+```

@@ -2,6 +2,21 @@
 
 view the code (https://github.com/overrkill/PyVision)
 
+### 2D Tranformations
+Translate,Rotate and Scale
+using numpy ndarray 
+only to calculate transforms
+### driver code ->twoD.py
+```markdown
+def translate(x,y,a):
+    return np.array([0,0,x,0,0,y,0,0,1]).reshape(3,3).dot(a)
+def rotate(deg,a):
+    return np.array([cos(deg),-sin(deg),0,sin(deg),cos(deg),0,0,0,1]).reshape(3,3).dot(a)
+def scale(sx,sy,a):
+    return np.array([sx,0,0,0,sy,0,0,0,1]).reshape(3,3).dot(a)
+
+```
+
 ### DDA
 
 ```markdown
@@ -41,3 +56,4 @@ while(x<x2):
     print("d:{} pt:({},{})".format(d,x,y))
     
 ```
+

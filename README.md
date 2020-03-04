@@ -4,7 +4,7 @@ view the code (https://github.com/overrkill/PyVision)
 
 ### window to viewport mapping
 
-Translate to orgin->scale->translate to viewport
+Translate to orgin->scale->translate to viewport*(non normalized viewport)
 ```
 
 

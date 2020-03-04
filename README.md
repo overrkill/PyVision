@@ -1,4 +1,4 @@
-## Computer Vision Alogirthms and their implementation in Python2
+## Computer Vision Alogirthms and their implementation in Python
 
 view the code (https://github.com/overrkill/PyVision)
 

@@ -2,6 +2,32 @@
 
 view the code (https://github.com/overrkill/PyVision)
 
+### window to viewport mapping
+
+Translate to orgin->scale->translate to viewport
+```
+
+
+def w2v(wrx, wry, wlx, wly, vrx, vry, vlx, vly, a):
+    sx = 1 / float((wlx - wrx) / (vlx - vrx))
+    sy = 1 / float((wly - wry) / (vly - vry))
+    # translate to origin
+
+    transOP = array([1, 0, -wrx, 0, 1, -wry, 0, 0, 1]).reshape(3, 3)
+
+    # scale to viewport
+
+    scalOP = array([sx, 0, 0, 0, sy, 0, 0, 0, 1]).reshape(3, 3)
+
+    theta = scalOP.dot(transOP)
+    finalOP = theta.dot(a)
+    return finalOP
+
+
+```
+While code in window2view.py
+
+
 ### 2D Tranformations
 Translate,Rotate and Scale
 using numpy ndarray 
@@ -16,6 +42,7 @@ def scale(sx,sy,a):
     return np.array([sx,0,0,0,sy,0,0,0,1]).reshape(3,3).dot(a)
 
 ```
+
 
 ### DDA
 
